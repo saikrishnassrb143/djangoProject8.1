@@ -11,14 +11,13 @@ class InsertInput(View):
         return render(request,'productinput.html')
 class Insert(View):
     def get(self,request):
-        p_id=int(request.GET["t1"])
-        p_name=request.GET["t2"]
-        p_cost=float(request.GET["t3"])
-        p_mfdt=request.GET["t4"]
-        p_expdt=request.GET["t5"]
-        p=product(pip=p_id,pname=p_name,pcost=p_cost,pmfdt=p_mfdt,expdt=p_expdt)
-        p.save()
-        return HttpResponse("product inserted successfully")
+        e_id=int(request.GET["t1"])
+        e_name=request.GET["t2"]
+        e_salary=float(request.GET["t3"])
+        e_eadress=request.GET["t4"]
+        p=product(eid=e_id,ename=e_name,esalary=e_salary,eadress=e_eadress,)
+        e.save()
+        return HttpResponse("employee inserted successfully")
 class Display(View):
     def get(self,request):
         qs = product.objects.all()
